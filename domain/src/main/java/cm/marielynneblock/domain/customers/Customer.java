@@ -1,5 +1,7 @@
 package cm.marielynneblock.domain.customers;
 
+import cm.marielynneblock.domain.addresses.Address;
+
 import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Id;
@@ -66,11 +68,37 @@ public class Customer {
         private String email;
         private String phoneNumber;
 
+        /* add illegal argument exeption later (providing the necessary fields set) */
+
         public static CustomerBuilder buildCustomer() {
             return new CustomerBuilder();
         }
 
-        /* add illegal argument exeption later (providing the necessary fields set) */
+        public CustomerBuilder withFirstName(String firstName) {
+            this.firstName = firstName;
+            return this;
+        }
+
+        public CustomerBuilder withLastName(String lastName) {
+            this.lastName = lastName;
+            return this;
+        }
+
+        public CustomerBuilder withAddress(Address address) {
+            this.address = address;
+            return this;
+        }
+
+        public CustomerBuilder withEmail(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public CustomerBuilder withPhoneNumber(String phoneNumber) {
+            this.phoneNumber = phoneNumber;
+            return this;
+        }
+
     }
 
 }

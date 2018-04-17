@@ -1,4 +1,4 @@
-package cm.marielynneblock.domain.customers;
+package cm.marielynneblock.domain.addresses;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
