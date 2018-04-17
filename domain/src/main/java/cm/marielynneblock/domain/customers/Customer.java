@@ -2,14 +2,16 @@ package cm.marielynneblock.domain.customers;
 
 import cm.marielynneblock.domain.addresses.Address;
 
-import javax.persistence.Column;
-import javax.persistence.Embedded;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "CUSTOMERS")
 public class Customer {
 
     @Id
     @Column
+    @SequenceGenerator(name = "customer_seq", sequenceName = "customer_id_seq", initialValue = 1, allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_seq")
     private int id;
 
     @Column(name = "FIRST_NAME")
@@ -68,7 +70,7 @@ public class Customer {
         private String email;
         private String phoneNumber;
 
-        /* add illegal argument exeption later (providing the necessary fields set) */
+        /* add illegal argument exception later (providing the necessary fields set) */
 
         public static CustomerBuilder buildCustomer() {
             return new CustomerBuilder();
@@ -98,7 +100,6 @@ public class Customer {
             this.phoneNumber = phoneNumber;
             return this;
         }
-
     }
 
 }
