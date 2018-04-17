@@ -14,7 +14,7 @@
         <module>domain</module>
         <module>service</module>
         <module>api</module>
-        <module>jar</module>
+        <module>application</module>
         <module>utilities</module>
     </modules>
 
