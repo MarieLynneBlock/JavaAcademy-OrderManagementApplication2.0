@@ -3,10 +3,11 @@ package cm.marielynneblock.service.customers;
 import cm.marielynneblock.domain.customers.Customer;
 import cm.marielynneblock.domain.customers.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import javax.transaction.Transactional;
 
-import javax.inject.Named;
-
-@Named
+@Repository
+@Transactional
 public class CustomerService {
     private CustomerRepository customerRepository;
 
